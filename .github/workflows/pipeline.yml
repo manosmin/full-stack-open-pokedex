@@ -13,10 +13,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Install dependencies
-        run: npm install
-      - name: Check style
-        run: npm run eslint
+      - run: npm install
+      - run: npm run eslint
       - run: npm run build
       - run: npm run test
       - uses: cypress-io/github-action@v5
@@ -24,7 +22,6 @@ jobs:
           command: npm run cypress:test
           start: npm run start-prod
           wait-on: http://localhost:5000
-      - name: Install Playwright browsers
-        run: npx playwright install
-      - name: Run Playwright tests
-        run: npm run test:e2e
+      - run: |
+          npx playwright install
+          npm run test:e2e
