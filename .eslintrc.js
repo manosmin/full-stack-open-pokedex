@@ -10,6 +10,10 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended'
   ],
+  'ignorePatterns': [
+    'cypress/',
+    'cypress.config.js'
+  ],
   'parserOptions': {
     'ecmaFeatures': {
       'jsx': true

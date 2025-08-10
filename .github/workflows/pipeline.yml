@@ -17,9 +17,14 @@ jobs:
         run: npm install
       - name: Check style
         run: npm run eslint
+      - run: npm run build
       - run: npm run test
+      - uses: cypress-io/github-action@v5
+        with:
+          command: npm run cypress:test
+          start: npm run start-prod
+          wait-on: http://localhost:5000
       - name: Install Playwright browsers
         run: npx playwright install
       - name: Run Playwright tests
         run: npm run test:e2e
-      - run: npm run build
