@@ -1,8 +1,8 @@
-name: Health checks from 18:00 to 19:00
+name: Health checks once a day
 
 on:
   schedule:
-    - cron: "* 18 * * *"
+    - cron: "0 0 * * *"
 
 jobs:
   health-checks:
