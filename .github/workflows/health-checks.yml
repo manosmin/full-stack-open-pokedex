@@ -1,7 +1,6 @@
 name: Health checks from 18:00 to 19:00
 
 on:
-  push:
   schedule:
     - cron: "* 18 * * *"
 
