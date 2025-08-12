@@ -45,6 +45,7 @@ jobs:
         with:
           node-version: '20'
       - run: npm install
+      - run: npm run build
       - uses: cypress-io/github-action@v5
         with:
           command: npm run cypress:test
